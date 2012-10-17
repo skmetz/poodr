@@ -1,4 +1,4 @@
-############## Page ?? ##############
+############## Page 18 ##############
 chainring = 52                    # number of teeth
 cog       = 11                    
 ratio     = chainring / cog.to_f
@@ -9,7 +9,7 @@ cog       = 27
 ratio     = chainring / cog.to_f
 puts ratio                        # -> 1.11111111111111
 
-############## Page ?? ##############
+############## Page 19 ##############
 class Gear
   attr_reader :chainring, :cog
   def initialize(chainring, cog)
@@ -25,7 +25,7 @@ end
 puts Gear.new(52, 11).ratio        # -> 4.72727272727273
 puts Gear.new(30, 27).ratio        # -> 1.11111111111111 
 
-############## Page ?? ##############
+############## Page 20 ##############
 class Gear
   attr_reader :chainring, :cog, :rim, :tire
   def initialize(chainring, cog, rim, tire)
@@ -51,14 +51,14 @@ puts Gear.new(52, 11, 26, 1.5).gear_inches
 puts Gear.new(52, 11, 24, 1.25).gear_inches 
 # -> 125.272727272727
 
-############## Page ?? ##############
+############## Page 20 ##############
 puts Gear.new(52, 11).ratio # didn't this used to work?
 # ArgumentError: wrong number of arguments (2 for 4)
 #	 from (irb):20:in `initialize'
 #	 from (irb):20:in `new'
 #	 from (irb):20
 
-############## Page ?? ##############
+############## Page 24 ##############
 class Gear
   def initialize(chainring, cog)
     @chainring = chainring
@@ -70,7 +70,7 @@ class Gear
   end
 end
 
-############## Page ?? ##############
+############## Page 25 ##############
 class Gear
   attr_reader :chainring, :cog  # <-------
   def initialize(chainring, cog)
@@ -83,25 +83,25 @@ class Gear
   end
 end
 
-############## Page ?? ##############
+############## Page 25 ##############
   # default implementation via attr_reader
   def cog
     @cog
   end
 
-############## Page ?? ##############
+############## Page 25 ##############
   # a simple reimplementation of cog
   def cog
     @cog * unanticipated_adjustment_factor
   end
 
-############## Page ?? ##############
+############## Page 25 ##############
   # a more complex one
   def cog
     @cog * (foo? ? bar_adjustment : baz_adjustment)
   end
 
-############## Page ?? ##############
+############## Page 26 ##############
 class ObscuringReferences
   attr_reader :data
   def initialize(data)
@@ -116,11 +116,11 @@ class ObscuringReferences
   # ... many other methods that index into the array
 end  
 
-############## Page ?? ##############
+############## Page 27 ##############
 # rim and tire sizes (now in milimeters!) in a 2d array
 @data = [[622, 20], [622, 23], [559, 30], [559, 40]]
 
-############## Page ?? ##############
+############## Page 28 ##############
 class RevealingReferences
   attr_reader :wheels
   def initialize(data)
@@ -140,21 +140,13 @@ class RevealingReferences
   end
 end
 
-############## Page ?? ##############
-@data = [[622, 20], [622, 23], [559, 30], [559, 40]]
-Example1.new(@data).diameters   
-# -> [662, 668, 619, 639]
-
-Example2.new(@data).diameters   
-# -> [662, 668, 619, 639]
-
-############## Page ?? ##############
+############## Page 29 ##############
   def diameters
     wheels.collect {|wheel| 
       wheel.rim + (wheel.tire * 2)}
   end
 
-############## Page ?? ##############
+############## Page 29 ##############
   # first - iterate over the array
   def diameters
     wheels.collect {|wheel| diameter(wheel)}
@@ -165,13 +157,13 @@ Example2.new(@data).diameters
     wheel.rim + (wheel.tire * 2)
   end
 
-############## Page ?? ##############
+############## Page 30 ##############
   def gear_inches
       # tire goes around rim twice for diameter
     ratio * (rim + (tire * 2))
   end
 
-############## Page ?? ##############
+############## Page 30 ##############
   def gear_inches
     ratio * diameter
   end
@@ -180,38 +172,7 @@ Example2.new(@data).diameters
     rim + (tire * 2)
   end
 
-############## Page ?? ##############
-class Gear
-  attr_reader :chainring, :cog, :wheel
-  def initialize(chainring, cog, rim, tire)
-    @chainring = chainring
-    @cog       = cog
-    @wheel     = Wheel.new(rim, tire)
-  end
-  
-  def ratio
-    chainring / cog.to_f
-  end
-
-  def gear_inches
-    ratio * wheel.diameter
-  end
-
-
-  class Wheel
-    attr_reader :rim, :tire
-    def initialize(rim, tire)
-      @rim  = rim
-      @tire = tire
-    end
-    
-    def diameter
-      rim + (tire * 2)
-    end
-  end
-end
-
-############## Page ?? ##############
+############## Page 32 ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(chainring, cog, rim, tire)
@@ -235,7 +196,7 @@ class Gear
   end
 end
 
-############## Page ?? ##############
+############## Page 33 ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(chainring, cog, wheel=nil)

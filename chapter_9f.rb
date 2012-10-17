@@ -3,7 +3,7 @@ MiniTest::Unit.runner = MiniTest::SuiteRunner.new
 MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 require 'minitest/autorun'
 
-############## Page ?? ##############
+############## Page ??? ##############
 class Wheel
   attr_reader :rim, :tire
   def initialize(rim, tire)
@@ -17,7 +17,7 @@ class Wheel
 # ...
 end
 
-############## Page ?? ##############
+############## Page ??? ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(args)
@@ -36,7 +36,7 @@ class Gear
 # ...
 end
 
-############## Page ?? ##############
+############## Page ??? ##############
 class Gear
   # ...
   def gear_inches
@@ -44,7 +44,7 @@ class Gear
   end
 end
 
-############## Page ?? ##############
+############## Page 224 ##############
 class DiameterDouble
   
   def diameter  # The interface changed to 'width',
@@ -65,7 +65,7 @@ class GearTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 225 ##############
 class WheelTest < MiniTest::Unit::TestCase
   def setup
     @wheel = Wheel.new(26, 1.5)
@@ -80,14 +80,14 @@ class WheelTest < MiniTest::Unit::TestCase
   end  
 end
 
-############## Page ?? ##############
+############## Page 226 ##############
 module DiameterizableInterfaceTest 
   def test_implements_the_diameterizable_interface
    assert_respond_to(@object, :width)
   end
 end
 
-############## Page ?? ##############
+############## Page 226 ##############
 class WheelTest < MiniTest::Unit::TestCase
   include DiameterizableInterfaceTest
   
@@ -100,7 +100,7 @@ class WheelTest < MiniTest::Unit::TestCase
   end  
 end
 
-############## Page ?? ##############
+############## Page 227 ##############
 class DiameterDouble
   def diameter
     10

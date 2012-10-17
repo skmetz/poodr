@@ -3,7 +3,7 @@ MiniTest::Unit.runner = MiniTest::SuiteRunner.new
 MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 require 'minitest/autorun'
 
-############## Page ?? ##############
+############## Page 215 ##############
 class Gear
   # ...
   def gear_inches
@@ -11,8 +11,7 @@ class Gear
   end
 end
 
-############## Page ?? ##############
-############## The full class is below
+############## Page 216 ##############
 class Gear
   attr_reader :chainring, :cog, :wheel, :observer
   def initialize(args)
@@ -38,8 +37,8 @@ class Gear
 # ...
 end
 
-############## The whole class for this example
-##############   so tests will run.
+############## Page ?? ##############
+# Full listing for above
 class Gear
   attr_reader :chainring, :cog, :wheel, :observer
   def initialize(args)
@@ -73,7 +72,7 @@ class Gear
   
 end
 
-############## Page ?? ##############
+############## Page 217 ##############
 class GearTest < MiniTest::Unit::TestCase
   
   def setup

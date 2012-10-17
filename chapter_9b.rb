@@ -3,7 +3,8 @@ MiniTest::Unit.runner = MiniTest::SuiteRunner.new
 MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 require 'minitest/autorun'
 
-############## Page ?? ##############
+############## Page ??? ##############
+# The Wheel class expected by the following test
 class Wheel
   attr_reader :rim, :tire
   def initialize(rim, tire)
@@ -17,7 +18,7 @@ class Wheel
 # ...
 end
 
-############## Page ?? ##############
+############## Page 205 ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(args)
@@ -38,7 +39,7 @@ class Gear
 # ...
 end
 
-############## Page ?? ##############
+############## Page 206 ##############
 class GearTest < MiniTest::Unit::TestCase
   def test_calculates_gear_inches
     gear =  Gear.new(
@@ -52,7 +53,51 @@ class GearTest < MiniTest::Unit::TestCase
   end
 end
 
+############## Page 207 ##############
+class Wheel
+  attr_reader :rim, :tire
+  def initialize(rim, tire)
+    @rim       = rim
+    @tire      = tire
+  end
+  
+  def width   # <---- used to be 'diameter'
+    rim + (tire * 2)
+  end
+# ...
+end
+
+############## Page 207 ##############
+class Gear
+  # ...
+  def gear_inches
+    ratio * wheel.diameter # <--- obsolete
+  end
+end
+
 ############## Page ?? ##############
+# Full listing for above
+class Gear
+  attr_reader :chainring, :cog, :wheel
+  def initialize(args)
+    @chainring = args[:chainring]
+    @cog       = args[:cog]
+    @wheel     = args[:wheel]
+  end
+
+  def gear_inches
+    ratio * wheel.diameter
+  end
+  
+  def ratio
+    chainring / cog.to_f
+  end
+# ...
+end
+
+
+
+############## Page 210 ##############
 # Create a player of the 'Diameterizable' role
 class DiameterDouble
   def diameter
@@ -73,7 +118,7 @@ class GearTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 212 ##############
 class WheelTest < MiniTest::Unit::TestCase
   def setup
     @wheel = Wheel.new(26, 1.5)

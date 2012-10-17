@@ -3,7 +3,7 @@ MiniTest::Unit.runner = MiniTest::SuiteRunner.new
 MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 require 'minitest/autorun'
 
-############## Page ?? ##############
+############## Page 219 ##############
 class Mechanic
   def prepare_bicycle(bicycle)
     #...
@@ -25,8 +25,8 @@ class Driver
   end
 end
 
-############## Page ?? ##############
-############## The full class is below.
+############## Page 220 ##############
+# The full class is below.
 class Trip
   attr_reader :bicycles, :customers, :vehicle
   
@@ -61,7 +61,7 @@ class Trip
   end
 end
 
-############## Page ?? ##############
+############## Page 220 ##############
 class Mechanic
   def prepare_trip(trip)
     trip.bicycles.each {|bicycle| 
@@ -88,7 +88,7 @@ class Driver
   # ...
 end
 
-############## Page ?? ##############
+############## Page 221 ##############
 class Trip
   attr_reader :bicycles, :customers, :vehicle
 
@@ -98,14 +98,14 @@ class Trip
   end
 end
 
-############## Page ?? ##############
+############## Page 222 ##############
 module PreparerInterfaceTest 
   def test_implements_the_preparer_interface
     assert_respond_to(@object, :prepare_trip)
   end
 end
 
-############## Page ?? ##############
+############## Page 222 ##############
 class MechanicTest < MiniTest::Unit::TestCase
   include PreparerInterfaceTest
   
@@ -116,7 +116,7 @@ class MechanicTest < MiniTest::Unit::TestCase
   # other tests which rely on @mechanic
 end
 
-############## Page ?? ##############
+############## Page 222 ##############
 class TripCoordinatorTest < MiniTest::Unit::TestCase
   include PreparerInterfaceTest
   
@@ -133,7 +133,7 @@ class DriverTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 223 ##############
 class TripTest < MiniTest::Unit::TestCase
   
   def test_requests_trip_preparation

@@ -3,7 +3,7 @@ MiniTest::Unit.runner = MiniTest::SuiteRunner.new
 MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 require 'minitest/autorun'
 
-############## Page ?? ##############
+############## Page 229 ##############
 class Bicycle
   attr_reader :size, :chain, :tire_size
   
@@ -37,7 +37,7 @@ class Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 230 ##############
 class RoadBike < Bicycle
   attr_reader :tape_color
   
@@ -54,7 +54,7 @@ class RoadBike < Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page ??? ##############
 class MountainBike < Bicycle
   attr_reader :front_shock, :rear_shock
   
@@ -72,7 +72,7 @@ class MountainBike < Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 231 ##############
 module BicycleInterfaceTest
   def test_responds_to_default_tire_size
     assert_respond_to(@object, :default_tire_size)
@@ -99,7 +99,7 @@ module BicycleInterfaceTest
   end
 end
 
-############## Page ?? ##############
+############## Page 231 ##############
 class BicycleTest < MiniTest::Unit::TestCase
   include BicycleInterfaceTest
   
@@ -116,7 +116,7 @@ class RoadBikeTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 233 ##############
 module BicycleSubclassTest
   def test_responds_to_post_initialize
     assert_respond_to(@object, :post_initialize)
@@ -131,7 +131,7 @@ module BicycleSubclassTest
   end
 end
 
-############## Page ?? ##############
+############## Page 233 ##############
 class RoadBikeTest < MiniTest::Unit::TestCase
   include BicycleInterfaceTest
   include BicycleSubclassTest
@@ -141,7 +141,7 @@ class RoadBikeTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 234 ##############
 class MountainBikeTest < MiniTest::Unit::TestCase
   include BicycleInterfaceTest
   include BicycleSubclassTest
@@ -151,7 +151,7 @@ class MountainBikeTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 235 ##############
 class BicycleTest < MiniTest::Unit::TestCase
   include BicycleInterfaceTest
   
@@ -164,7 +164,7 @@ class BicycleTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 236 ##############
 class RoadBikeTest < MiniTest::Unit::TestCase
   include BicycleInterfaceTest
   include BicycleSubclassTest
@@ -178,7 +178,7 @@ class RoadBikeTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 238 ##############
 class StubbedBike < Bicycle
   def default_tire_size
     0
@@ -209,7 +209,7 @@ class BicycleTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 239 ##############
 class StubbedBikeTest < MiniTest::Unit::TestCase
   include BicycleSubclassTest
   

@@ -1,4 +1,4 @@
-############## Page ?? ##############
+############## Page 165 ##############
 class Bicycle
   attr_reader :size, :parts
 
@@ -12,7 +12,7 @@ class Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 165 ##############
 class Parts
   attr_reader :chain, :tire_size
   
@@ -78,7 +78,7 @@ class MountainBikeParts < Parts
   end
 end
 
-############## Page ?? ##############
+############## Page 167 ##############
 road_bike = 
   Bicycle.new(
     size:  'L', 
@@ -103,7 +103,7 @@ mountain_bike.spares
 #     :chain=>"10-speed", 
 #     :rear_shock=>"Fox"}
 
-############## Page ?? ##############
+############## Page 169 ##############
 class Bicycle
   attr_reader :size, :parts
 
@@ -139,7 +139,7 @@ class Part
   end
 end
 
-############## Page ?? ##############
+############## Page 170 ##############
 chain = 
   Part.new(name: 'chain', description: '10-speed')
 
@@ -161,11 +161,11 @@ front_shock =
     description: 'Manitou',     
     needs_spare: false)
 
-############## Page ?? ##############
+############## Page 171 ##############
 road_bike_parts = 
   Parts.new([chain, road_tire, tape])
 
-############## Page ?? ##############
+############## Page 171 ##############
 road_bike = 
   Bicycle.new(
     size:  'L', 
@@ -203,25 +203,25 @@ mountain_bike.spares
 #         @name="tire_size", 
 #         etc ...
 
-############## Page ?? ##############
+############## Page 172 ##############
 mountain_bike.spares.size # -> 3
 mountain_bike.parts.size
 # -> NoMethodError: 
 #      undefined method `size' for #<Parts:...>
 
-############## Page ?? ##############
+############## Page 173 ##############
   def size
     parts.size
   end
 
-############## Page ?? ##############
+############## Page 173 ##############
 class Parts < Array
   def spares
     select {|part| part.needs_spare}
   end
 end
 
-############## Page ?? ##############
+############## Page 174 ##############
 #  Parts inherits '+' from Array, so you can 
 #    add two Parts together.
 combo_parts = 
@@ -240,7 +240,7 @@ mountain_bike.parts.class   # -> Parts
 road_bike.parts.class       # -> Parts
 combo_parts.class           # -> Array !!!
 
-############## Page ?? ##############
+############## Page 175 ##############
 require 'forwardable'
 class Parts
   extend Forwardable
@@ -256,7 +256,8 @@ class Parts
   end
 end
 
-############## Complete ?? ##############
+############## Page ?? ##############
+# Full listing for above
 class Bicycle
   attr_reader :size, :parts
 
@@ -317,7 +318,7 @@ front_shock =
     description: 'Manitou',     
     needs_spare: false)
 
-############## Page ?? ##############
+############## Page 175 ##############
 mountain_bike = 
   Bicycle.new(
     size:  'L', 
@@ -329,12 +330,12 @@ mountain_bike =
 mountain_bike.spares.size   # -> 3
 mountain_bike.parts.size    # -> 4
 
-############## Page ?? ##############
+############## Page ??? ##############
 mountain_bike.parts + road_bike.parts
 # -> NoMethodError: undefined method `+' 
 #      for #<Parts:....>
 
-############## Page ?? ##############
+############## Page 176 ##############
 road_config = 
   [['chain',        '10-speed'],
    ['tire_size',    '23'],
@@ -346,7 +347,7 @@ mountain_config =
    ['front_shock',  'Manitou', false],
    ['rear_shock',   'Fox']]
 
-############## Page ?? ##############
+############## Page 177 ##############
 module PartsFactory
   def self.build(config, 
                  part_class  = Part,
@@ -361,7 +362,7 @@ module PartsFactory
   end
 end
 
-############## Page ?? ##############
+############## Page 178 ##############
 road_parts = PartsFactory.build(road_config)
 # -> [#<Part:0x00000101825b70 
 #       @name="chain", 
@@ -380,7 +381,7 @@ mountain_parts = PartsFactory.build(mountain_config)
 #        @name="tire_size", 
 #        etc ...
 
-############## Page ?? ##############
+############## Page 179 ##############
 class Part
   attr_reader :name, :description, :needs_spare
   
@@ -391,7 +392,7 @@ class Part
   end
 end
 
-############## Page ?? ##############
+############## Page 179 ##############
 require 'ostruct'
 module PartsFactory
   def self.build(config, parts_class = Parts)
@@ -408,7 +409,7 @@ module PartsFactory
   end
 end
 
-############## Page ?? ##############
+############## Page 180 ##############
 mountain_parts = PartsFactory.build(mountain_config)
 # -> <Parts:0x000001009ad8b8 @parts=
 #      [#<OpenStruct name="chain", 
@@ -418,7 +419,7 @@ mountain_parts = PartsFactory.build(mountain_config)
 #                    description="2.1", 
 #                    etc ...
 
-############## Page ?? ##############
+############## Page 180 ##############
 class Bicycle
   attr_reader :size, :parts
 
@@ -473,9 +474,8 @@ mountain_config =
    ['tire_size',    '2.1'],
    ['front_shock',  'Manitou', false],
    ['rear_shock',   'Fox']]
-# !x
-##########################################################
-# !!032
+
+############## Page 182 ##############
 road_bike = 
   Bicycle.new(
     size: 'L', 
@@ -491,9 +491,8 @@ mountain_bike =
 
 mountain_bike.spares
 # -> [#<OpenStruct PartsFactory::Part name="chain", etc ...
-# !x
-##########################################################
-# !!040
+#
+############## Page 182 ##############
 recumbent_config = 
   [['chain',        '9-speed'],
    ['tire_size',    '28'],

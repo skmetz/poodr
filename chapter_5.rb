@@ -1,4 +1,4 @@
-############## Page ?? ##############
+############## Page 87 ##############
 class Trip
   attr_reader :bicycles, :customers, :vehicle
  
@@ -22,7 +22,7 @@ class Mechanic
   end
 end
 
-############## Page ?? ##############
+############## Page 88 ##############
 # Trip preparation becomes more complicated
 class Trip
   attr_reader :bicycles, :customers, :vehicle
@@ -59,7 +59,7 @@ class Driver
   end
 end
 
-############## Page ?? ##############
+############## Page 93 ##############
 # Trip preparation becomes easier
 class Trip
   attr_reader :bicycles, :customers, :vehicle
@@ -98,7 +98,7 @@ class Driver
   # ...
 end
 
-############## Page ?? ##############
+############## Page 96 ##############
 class Trip
   attr_reader :bicycles, :customers, :vehicle
   
@@ -117,7 +117,7 @@ class Trip
   end
 end
 
-############## Page ?? ##############
+############## Page 97 ##############
   if preparer.kind_of?(Mechanic)
     preparer.prepare_bicycles(bicycle) 
   elsif preparer.kind_of?(TripCoordinator)
@@ -127,7 +127,7 @@ end
     preparer.fill_water_tank(vehicle)
   end
 
-############## Page ?? ##############
+############## Page 97 ##############
   if preparer.responds_to?(:prepare_bicycles)
     preparer.prepare_bicycles(bicycle) 
   elsif preparer.responds_to?(:buy_food)
@@ -137,7 +137,7 @@ end
     preparer.fill_water_tank(vehicle)
   end
 
-############## Page ?? ##############
+############## Page 99 ##############
 # A convenience wrapper for <tt>find(:first, *args)</tt>. 
 # You can pass in all the same arguments to this 
 # method as you can to <tt>find(:first)</tt>.

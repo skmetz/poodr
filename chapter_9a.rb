@@ -3,7 +3,7 @@ MiniTest::Unit.runner = MiniTest::SuiteRunner.new
 MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 require 'minitest/autorun'
 
-############## Page ?? ##############
+############## Page 201 ##############
 class Wheel
   attr_reader :rim, :tire
   def initialize(rim, tire)
@@ -36,7 +36,7 @@ class Gear
 # ...
 end
 
-############## Page ?? ##############
+############## Page 203 ##############
 class WheelTest < MiniTest::Unit::TestCase
 
   def test_calculates_diameter
@@ -48,7 +48,7 @@ class WheelTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 203 ##############
 class GearTest < MiniTest::Unit::TestCase
 
   def test_calculates_gear_inches

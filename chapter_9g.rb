@@ -43,8 +43,8 @@ module DiameterizableInterfaceTest
   end
 end
 
-############## Page ?? ##############
-############## Full example is below.
+############## Page 228 ##############
+# Full example is below.
 class DiameterDouble
   def width 
     10
@@ -79,7 +79,19 @@ class GearTest < MiniTest::Unit::TestCase
   end
 end
 
-############## Page ?? ##############
+############## Page 228 ##############
+# Full listing is below
+class Gear
+
+  def gear_inches
+                 # finally, 'width' instead of 'diameter'
+    ratio * wheel.width
+  end
+
+# ...
+end
+
+############## Page ??? ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(args)
@@ -98,13 +110,3 @@ class Gear
 # ...
 end
 
-############## Page ?? ##############
-class Gear
-
-  def gear_inches
-                 # finally, 'width' instead of 'diameter'
-    ratio * wheel.width
-  end
-
-# ...
-end

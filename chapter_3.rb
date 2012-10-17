@@ -1,4 +1,4 @@
-############## Page ?? ##############
+############## Page 36 ##############
 class Gear
   attr_reader :chainring, :cog, :rim, :tire
   def initialize(chainring, cog, rim, tire)
@@ -33,7 +33,7 @@ end
 
 Gear.new(52, 11, 26, 1.5).gear_inches 
 
-############## Page ?? ##############
+############## Page 39 ##############
 class Gear
   attr_reader :chainring, :cog, :rim, :tire
   def initialize(chainring, cog, rim, tire)
@@ -51,7 +51,7 @@ end
 
 Gear.new(52, 11, 26, 1.5).gear_inches  
 
-############## Page ?? ##############
+############## Page 41 ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(chainring, cog, wheel)
@@ -69,7 +69,7 @@ end
 # Gear expects a 'Duck' that knows 'diameter'
 Gear.new(52, 11, Wheel.new(26, 1.5)).gear_inches  
 
-############## Page ?? ##############
+############## Page 43 ##############
 class Gear
   attr_reader :chainring, :cog, :rim, :tire
   def initialize(chainring, cog, rim, tire)
@@ -83,7 +83,7 @@ class Gear
   end
 # ...
 
-############## Page ?? ##############
+############## Page 42 ##############
 class Gear
   attr_reader :chainring, :cog, :rim, :tire
   def initialize(chainring, cog, rim, tire)
@@ -102,19 +102,19 @@ class Gear
   end
 # ...
 
-############## Page ?? ##############
+############## Page 44 ##############
 def gear_inches
   ratio * wheel.diameter
 end
 
-############## Page ?? ##############
+############## Page 44 ##############
 def gear_inches
   #... a few lines of scary math
   foo = some_intermediate_result * wheel.diameter
   #... more lines of scary math
 end
 
-############## Page ?? ##############
+############## Page 45 ##############
 def gear_inches
   #... a few lines of scary math
   foo = some_intermediate_result * diameter
@@ -125,7 +125,7 @@ def diameter
   wheel.diameter
 end
 
-############## Page ?? ##############
+############## Page 46 ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(chainring, cog, wheel)
@@ -141,7 +141,7 @@ Gear.new(
   11, 
   Wheel.new(26, 1.5)).gear_inches
 
-############## Page ?? ##############
+############## Page 47 ##############
 class Gear
   attr_reader :chainring, :cog, :wheel
   def initialize(args)
@@ -157,7 +157,7 @@ Gear.new(
   :cog       => 11, 
   :wheel     => Wheel.new(26, 1.5)).gear_inches 
 
-############## Page ?? ##############
+############## Page 48 ##############
   # specifying defaults using ||
   def initialize(args)
     @chainring = args[:chainring] || 40
@@ -165,7 +165,7 @@ Gear.new(
     @wheel     = args[:wheel]
   end
 
-############## Page ?? ##############
+############## Page 49 ##############
   # specifying defaults using fetch
   def initialize(args)
     @chainring = args.fetch(:chainring, 40)
@@ -173,7 +173,7 @@ Gear.new(
     @wheel     = args[:wheel]
   end
 
-############## Page ?? ##############
+############## Page 49 ##############
   # specifying defaults by merging a defaults hash
   def initialize(args)
     args = defaults.merge(args)
@@ -185,7 +185,7 @@ Gear.new(
     {:chainring => 40, :cog => 18}
   end
 
-############## Page ?? ##############
+############## Page 50 ##############
 # When Gear is part of an external interface
 module SomeFramework
   class Gear
@@ -260,7 +260,7 @@ GearWrapper.gear(
   :cog       => 11, 
   :wheel     => Wheel.new(26, 1.5)).gear_inches
 
-############## Page ?? ##############
+############## Page 52 ##############
 class Gear
   attr_reader :chainring, :cog
   def initialize(chainring, cog)

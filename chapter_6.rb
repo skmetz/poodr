@@ -1,4 +1,4 @@
-############## Page ?? ##############
+############## Page 107 ##############
 class Bicycle
   attr_reader :size, :tape_color
   
@@ -28,7 +28,7 @@ bike.spares
 #     :chain       => "10-speed", 
 #     :tape_color  => "red"}
 
-############## Page ?? ##############
+############## Page 110 ##############
 class Bicycle
   attr_reader :style, :size, :tape_color, 
               :front_shock, :rear_shock
@@ -66,7 +66,7 @@ bike.spares
 #     :chain       => "10-speed",
 #     :rear_shock  => 'Fox'}
 
-############## Page ?? ##############
+############## Page 115 ##############
 class MountainBike < Bicycle
   attr_reader :front_shock, :rear_shock
   
@@ -81,7 +81,7 @@ class MountainBike < Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 115 ##############
 mountain_bike = MountainBike.new(
                   size:         'S', 
                   front_shock:  'Manitou',
@@ -96,7 +96,7 @@ mountain_bike.spares
 #     :front_shock => 'Manitou',
 #     :rear_shock  => "Fox"} 
 
-############## Page ?? ##############
+############## Page 119 ##############
 class Bicycle
   # This class is now empty.
   # All code has been moved to RoadBike.
@@ -112,7 +112,7 @@ class MountainBike < Bicycle
   # Code has not changed.
 end
 
-############## Page ?? ##############
+############## Page 120 ##############
 road_bike = RoadBike.new(
               size:       'M', 
               tape_color: 'red' )
@@ -127,7 +127,7 @@ mountain_bike = MountainBike.new(
 mountain_bike.size
 # NoMethodError: undefined method `size'
 
-############## Complete ?? ##############
+############## Page ?? ##############
 # This is the complete code for example above
 class Bicycle
   # This class is now empty.
@@ -177,7 +177,7 @@ mountain_bike = MountainBike.new(
 mountain_bike.size
 # NoMethodError: undefined method `size'
 
-############## Page ?? ##############
+############## Page 121 ##############
 class Bicycle
   attr_reader :size     # <- promoted from RoadBike
   
@@ -196,7 +196,7 @@ class RoadBike < Bicycle
   # ...
 end  
 
-############## Page ?? ##############
+############## Page 122 ##############
 road_bike = RoadBike.new(
               size:       'M', 
               tape_color: 'red' )
@@ -210,7 +210,7 @@ mountain_bike = MountainBike.new(
 
 mountain_bike.size # -> 'S'
 
-############## Page ?? ##############
+############## Page ??? ##############
 class Bicycle
   attr_reader :size
   
@@ -261,7 +261,7 @@ mountain_bike = MountainBike.new(
 
 mountain_bike.size # -> 'S'
 
-############## Page ?? ##############
+############## Page ??? ##############
 class MountainBike < Bicycle
   # ...
   def spares
@@ -269,11 +269,11 @@ class MountainBike < Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page ??? ##############
 mountain_bike.spares
 # NoMethodError: super: no superclass method `spares' 
 
-############## Page ?? ##############
+############## Page 123 ##############
 class RoadBike < Bicycle
   # ...
   def spares
@@ -283,7 +283,7 @@ class RoadBike < Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 125 ##############
 class Bicycle
   attr_reader :size, :chain, :tire_size
   
@@ -295,7 +295,7 @@ class Bicycle
   # ...  
 end
 
-############## Page ?? ##############
+############## Page 126 ##############
 class Bicycle
   attr_reader :size, :chain, :tire_size
   
@@ -324,7 +324,7 @@ class MountainBike < Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 126 ##############
 road_bike = RoadBike.new(
               size:       'M', 
               tape_color: 'red' )
@@ -340,7 +340,7 @@ mountain_bike = MountainBike.new(
 mountain_bike.tire_size # => '2.1'
 road_bike.chain         # => "10-speed"
 
-############## Page ?? ##############
+############## Page 127 ##############
 class RecumbentBike < Bicycle
   def default_chain
     '9-speed'
@@ -351,11 +351,11 @@ bent = RecumbentBike.new
 # NameError: undefined local variable or method
 #   `default_tire_size'
 
-############## Page ?? ##############
+############## Page ??? ##############
   # This line of code is a time bomb
   @tire_size  = args[:tire_size]  || default_tire_size
 
-############## Page ?? ##############
+############## Page 128 ##############
 class Bicycle
   #...
   def default_tire_size
@@ -363,11 +363,11 @@ class Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 128 ##############
 bent = RecumbentBike.new
 #  NotImplementedError: NotImplementedError
 
-############## Page ?? ##############
+############## Page 128 ##############
 class Bicycle
   #...
   def default_tire_size
@@ -376,13 +376,30 @@ class Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 129 ##############
 bent = RecumbentBike.new
 #  NotImplementedError: 
 #    This RecumbentBike cannot respond to:
 #	     `default_tire_size'
 
-############## Page ?? ##############
+
+############## Page 130 ##############
+class RoadBike < Bicycle
+  #
+  def spares
+    { chain:        '10-speed',
+      tire_size:    '23',
+      tape_color:   tape_color}
+  end
+end
+############## Page 130 ##############
+class MountainBike < Bicycle
+  #
+  def spares
+    super.merge({rear_shock:  rear_shock})
+  end
+end
+############## Page 130 ##############
 class Bicycle
   #...
   def spares
@@ -391,7 +408,7 @@ class Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 131 ##############
 class Bicycle
   attr_reader :size, :chain, :tire_size
   
@@ -450,8 +467,8 @@ class MountainBike < Bicycle
   end
 end
 
-############## Page ?? ##############
-##### Results for 40, just in case I decide I need them
+############## Page ??? ##############
+##### Results for the above
 road_bike = RoadBike.new(
               size:       'M', 
               tape_color: 'red' )
@@ -471,7 +488,7 @@ mountain_bike.spares
 #     :chain       => "10-speed", 
 #     :rear_shock  => "Fox"} 
 
-############## Page ?? ##############
+############## Page 133 ##############
 class RecumbentBike < Bicycle
   attr_reader :flag
   
@@ -498,7 +515,7 @@ bent.spares
 #     :chain     => nil, 
 #     :flag      => "tall and orange"} 
 
-############## Page ?? ##############
+############## Page 134 ##############
 class Bicycle
 
   def initialize(args={})
@@ -523,7 +540,8 @@ class RoadBike < Bicycle
   # ...
 end
 
-############## Page ?? ##############
+############## Page ??? ##############
+# full listing for above
 class Bicycle
   attr_reader :size, :chain, :tire_size
   
@@ -575,7 +593,7 @@ road_bike = RoadBike.new(
 
 road_bike.spares
 
-############## Page ?? ##############
+############## Page 135 ##############
 class Bicycle
   # ...
   def spares
@@ -587,6 +605,7 @@ class Bicycle
   def local_spares
     {}
   end
+
 end
 
 class RoadBike < Bicycle
@@ -594,10 +613,11 @@ class RoadBike < Bicycle
   def local_spares
     {tape_color: tape_color}
   end
+
 end
 
-############## Page ?? ##############
-# This is the complete code for example above
+############## Page ??? ##############
+# Full listing for above
 class Bicycle
   attr_reader :size, :chain, :tire_size
   
@@ -655,7 +675,7 @@ road_bike.spares
 #     :chain       => "10-speed", 
 #     :tape_color  => "red"}
 
-############## Page ?? ##############
+############## Page 136 ##############
 class Bicycle
   attr_reader :size, :chain, :tire_size
   
@@ -723,7 +743,7 @@ class MountainBike < Bicycle
   end
 end
 
-############## Page ?? ##############
+############## Page 138 ##############
 class RecumbentBike < Bicycle
   attr_reader :flag
   

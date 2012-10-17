@@ -1,4 +1,4 @@
-############## Page ?? ##############
+############## Page 148 ##############
 class Schedule
   def scheduled?(schedulable, start_date, end_date)
     puts "This #{schedulable.class} " + 
@@ -8,7 +8,7 @@ class Schedule
   end
 end
 
-############## Page ?? ##############
+############## Page 149 ##############
 class Bicycle
   attr_reader :schedule, :size, :chain, :tire_size
   
@@ -48,7 +48,7 @@ b.schedulable?(starting, ending)
 #   between 2015-09-03 and 2015-09-10
 #  => true
 
-############## Page ?? ##############
+############## Page 150 ##############
 module Schedulable
   attr_writer :schedule
 
@@ -71,7 +71,7 @@ module Schedulable
 
 end
 
-############## Page ?? ##############
+############## Page 151 ##############
 class Bicycle
   include Schedulable
   
@@ -92,7 +92,7 @@ b.schedulable?(starting, ending)
 #    between 2015-09-03 and 2015-09-10
 #  => true
 
-############## Page ?? ##############
+############## Page 152 ##############
 class Vehicle
   include Schedulable
   
