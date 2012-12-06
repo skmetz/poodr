@@ -91,7 +91,7 @@ module BicycleInterfaceTest
   end
   
   def test_responds_to_tire_size
-    assert_respond_to(@object, :size)
+    assert_respond_to(@object, :tire_size)
   end
   
   def test_responds_to_spares
