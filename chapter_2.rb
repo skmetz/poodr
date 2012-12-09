@@ -1,11 +1,11 @@
 ############## Page 18 ##############
 chainring = 52                    # number of teeth
-cog       = 11                    
+cog       = 11
 ratio     = chainring / cog.to_f
 puts ratio                        # -> 4.72727272727273
 
-chainring = 30                    
-cog       = 27                    
+chainring = 30
+cog       = 27
 ratio     = chainring / cog.to_f
 puts ratio                        # -> 1.11111111111111
 
@@ -16,14 +16,14 @@ class Gear
     @chainring = chainring
     @cog       = cog
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
 end
 
 puts Gear.new(52, 11).ratio        # -> 4.72727272727273
-puts Gear.new(30, 27).ratio        # -> 1.11111111111111 
+puts Gear.new(30, 27).ratio        # -> 1.11111111111111
 
 ############## Page 20 ##############
 class Gear
@@ -34,7 +34,7 @@ class Gear
     @rim       = rim
     @tire      = tire
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -45,10 +45,10 @@ class Gear
   end
 end
 
-puts Gear.new(52, 11, 26, 1.5).gear_inches  
+puts Gear.new(52, 11, 26, 1.5).gear_inches
 # -> 137.090909090909
 
-puts Gear.new(52, 11, 24, 1.25).gear_inches 
+puts Gear.new(52, 11, 24, 1.25).gear_inches
 # -> 125.272727272727
 
 ############## Page 20 ##############
@@ -107,14 +107,14 @@ class ObscuringReferences
   def initialize(data)
     @data = data
   end
-  
+
   def diameters
     # 0 is rim, 1 is tire
-    data.collect {|cell| 
+    data.collect {|cell|
       cell[0] + (cell[1] * 2)}
   end
   # ... many other methods that index into the array
-end  
+end
 
 ############## Page 27 ##############
 # rim and tire sizes (now in milimeters!) in a 2d array
@@ -128,21 +128,21 @@ class RevealingReferences
   end
 
   def diameters
-    wheels.collect {|wheel| 
+    wheels.collect {|wheel|
       wheel.rim + (wheel.tire * 2)}
   end
   # ... now everyone can send rim/tire to wheel
 
   Wheel = Struct.new(:rim, :tire)
   def wheelify(data)
-    data.collect {|cell| 
+    data.collect {|cell|
       Wheel.new(cell[0], cell[1])}
   end
 end
 
 ############## Page 29 ##############
   def diameters
-    wheels.collect {|wheel| 
+    wheels.collect {|wheel|
       wheel.rim + (wheel.tire * 2)}
   end
 
@@ -167,7 +167,7 @@ end
   def gear_inches
     ratio * diameter
   end
-  
+
   def diameter
     rim + (tire * 2)
   end
@@ -180,7 +180,7 @@ class Gear
     @cog       = cog
     @wheel     = Wheel.new(rim, tire)
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -204,7 +204,7 @@ class Gear
     @cog       = cog
     @wheel     = wheel
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -216,12 +216,12 @@ end
 
 class Wheel
   attr_reader :rim, :tire
-  
+
   def initialize(rim, tire)
     @rim       = rim
     @tire      = tire
   end
-  
+
   def diameter
     rim + (tire * 2)
   end
@@ -232,12 +232,12 @@ class Wheel
 end
 
 @wheel = Wheel.new(26, 1.5)
-puts @wheel.circumference                 
+puts @wheel.circumference
 # -> 91.106186954104
 
-puts Gear.new(52, 11, @wheel).gear_inches 
+puts Gear.new(52, 11, @wheel).gear_inches
 # -> 137.090909090909
 
-puts Gear.new(52, 11).ratio               
+puts Gear.new(52, 11).ratio
 # -> 4.72727272727273
 

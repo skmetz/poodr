@@ -20,17 +20,17 @@ class Gear
   end
 
   # ...
-  
+
   def set_cog(new_cog)
     @cog = new_cog
     changed
   end
-  
+
   def set_chainring(new_chainring)
     @chainring = new_chainring
     changed
   end
-  
+
   def changed
     observer.changed(chainring, cog)
   end
@@ -51,35 +51,35 @@ class Gear
   def gear_inches
     ratio * wheel.diameter
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
-  
+
   def set_cog(new_cog)
     @cog = new_cog
     changed
   end
-  
+
   def set_chainring(new_chainring)
     @chainring = new_chainring
     changed
   end
-  
+
   def changed
     observer.changed(chainring, cog)
   end
-  
+
 end
 
 ############## Page 217 ##############
 class GearTest < MiniTest::Unit::TestCase
-  
+
   def setup
     @observer = MiniTest::Mock.new
     @gear     = Gear.new(
-                  chainring: 52, 
-                  cog:       11, 
+                  chainring: 52,
+                  cog:       11,
                   observer:  @observer)
   end
 

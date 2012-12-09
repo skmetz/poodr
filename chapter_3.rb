@@ -11,7 +11,7 @@ class Gear
   def gear_inches
     ratio * Wheel.new(rim, tire).diameter
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -24,14 +24,14 @@ class Wheel
     @rim       = rim
     @tire      = tire
   end
-  
+
   def diameter
     rim + (tire * 2)
   end
 # ...
 end
 
-Gear.new(52, 11, 26, 1.5).gear_inches 
+Gear.new(52, 11, 26, 1.5).gear_inches
 
 ############## Page 39 ##############
 class Gear
@@ -42,14 +42,14 @@ class Gear
     @rim       = rim
     @tire      = tire
   end
-  
+
   def gear_inches
     ratio * Wheel.new(rim, tire).diameter
   end
 # ...
 end
 
-Gear.new(52, 11, 26, 1.5).gear_inches  
+Gear.new(52, 11, 26, 1.5).gear_inches
 
 ############## Page 41 ##############
 class Gear
@@ -59,7 +59,7 @@ class Gear
     @cog       = cog
     @wheel     = wheel
   end
-  
+
   def gear_inches
     ratio * wheel.diameter
   end
@@ -67,7 +67,7 @@ class Gear
 end
 
 # Gear expects a 'Duck' that knows 'diameter'
-Gear.new(52, 11, Wheel.new(26, 1.5)).gear_inches  
+Gear.new(52, 11, Wheel.new(26, 1.5)).gear_inches
 
 ############## Page 43 ##############
 class Gear
@@ -77,7 +77,7 @@ class Gear
     @cog       = cog
     @wheel     = Wheel.new(rim, tire)
   end
-  
+
   def gear_inches
     ratio * wheel.diameter
   end
@@ -92,11 +92,11 @@ class Gear
     @rim       = rim
     @tire      = tire
   end
-  
+
   def gear_inches
     ratio * wheel.diameter
   end
-  
+
   def wheel
     @wheel ||= Wheel.new(rim, tire)
   end
@@ -137,8 +137,8 @@ class Gear
 end
 
 Gear.new(
-  52, 
-  11, 
+  52,
+  11,
   Wheel.new(26, 1.5)).gear_inches
 
 ############## Page 47 ##############
@@ -153,9 +153,9 @@ class Gear
 end
 
 Gear.new(
-  :chainring => 52, 
-  :cog       => 11, 
-  :wheel     => Wheel.new(26, 1.5)).gear_inches 
+  :chainring => 52,
+  :cog       => 11,
+  :wheel     => Wheel.new(26, 1.5)).gear_inches
 
 ############## Page 48 ##############
   # specifying defaults using ||
@@ -180,7 +180,7 @@ Gear.new(
     @chainring = args[:chainring]
 #   ...
   end
-  
+
   def defaults
     {:chainring => 40, :cog => 18}
   end
@@ -196,22 +196,22 @@ module SomeFramework
       @wheel     = wheel
     end
   # ...
-  end  
+  end
 end
 
 # wrap the interface to protect yourself from changes
 module GearWrapper
   def self.gear(args)
-    SomeFramework::Gear.new(args[:chainring], 
-                            args[:cog], 
+    SomeFramework::Gear.new(args[:chainring],
+                            args[:cog],
                             args[:wheel])
   end
 end
 
 # Now you can create a new Gear using an arguments hash.
 GearWrapper.gear(
-  :chainring => 52, 
-  :cog       => 11, 
+  :chainring => 52,
+  :cog       => 11,
   :wheel     => Wheel.new(26, 1.5)).gear_inches
 
 ############## Page ?? ##############
@@ -228,7 +228,7 @@ module SomeFramework
     def gear_inches
       ratio * wheel.diameter
     end
-  
+
     def ratio
       chainring / cog.to_f
     end
@@ -241,7 +241,7 @@ class Wheel
     @rim       = rim
     @tire      = tire
   end
-  
+
   def diameter
     rim + (tire * 2)
   end
@@ -249,15 +249,15 @@ end
 
 module GearWrapper
   def self.gear(args)
-    SomeFramework::Gear.new(args[:chainring], 
-                            args[:cog], 
+    SomeFramework::Gear.new(args[:chainring],
+                            args[:cog],
                             args[:wheel])
   end
 end
 
 GearWrapper.gear(
-  :chainring => 52, 
-  :cog       => 11, 
+  :chainring => 52,
+  :cog       => 11,
   :wheel     => Wheel.new(26, 1.5)).gear_inches
 
 ############## Page 52 ##############
@@ -285,15 +285,15 @@ class Wheel
     @tire      = tire
     @gear      = Gear.new(chainring, cog)
   end
-  
+
   def diameter
     rim + (tire * 2)
   end
-  
+
   def gear_inches
     gear.gear_inches(diameter)
   end
 #  ...
 end
 
-Wheel.new(26, 1.5, 52, 11).gear_inches 
+Wheel.new(26, 1.5, 52, 11).gear_inches

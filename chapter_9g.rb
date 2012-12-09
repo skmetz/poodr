@@ -10,7 +10,7 @@ class Wheel
     @rim       = rim
     @tire      = tire
   end
-  
+
   def width
     rim + (tire * 2)
   end
@@ -29,7 +29,7 @@ class Gear
   def gear_inches
     ratio * wheel.diameter
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -37,7 +37,7 @@ class Gear
 end
 
 ############## From previous example ##############
-module DiameterizableInterfaceTest 
+module DiameterizableInterfaceTest
   def test_implements_the_diameterizable_interface
     assert_respond_to(@object, :width)
   end
@@ -46,21 +46,21 @@ end
 ############## Page 228 ##############
 # Full example is below.
 class DiameterDouble
-  def width 
+  def width
     10
   end
 end
 
 ############## Full example, so tests will run.
 class DiameterDouble
-  def width 
+  def width
     10
   end
 end
 
 class DiameterDoubleTest < MiniTest::Unit::TestCase
   include DiameterizableInterfaceTest
-  
+
   def setup
     @object = DiameterDouble.new
   end
@@ -69,12 +69,12 @@ end
 class GearTest < MiniTest::Unit::TestCase
   def test_calculates_gear_inches
     gear =  Gear.new(
-              chainring: 52, 
-              cog:       11, 
+              chainring: 52,
+              cog:       11,
               wheel:     DiameterDouble.new)
-              
+
     assert_in_delta(47.27,
-                    gear.gear_inches,  
+                    gear.gear_inches,
                     0.01)
   end
 end
@@ -103,7 +103,7 @@ class Gear
   def gear_inches
     ratio * wheel.width
   end
-  
+
   def ratio
     chainring / cog.to_f
   end

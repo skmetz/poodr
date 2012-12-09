@@ -10,7 +10,7 @@ class Wheel
     @rim       = rim
     @tire      = tire
   end
-  
+
   def width   # <---- used to be 'diameter'
     rim + (tire * 2)
   end
@@ -29,7 +29,7 @@ class Gear
   def gear_inches
     ratio * wheel.diameter
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -46,7 +46,7 @@ end
 
 ############## Page 224 ##############
 class DiameterDouble
-  
+
   def diameter  # The interface changed to 'width',
     10          # but this double and Gear both
   end           # still use 'diameter'.
@@ -55,12 +55,12 @@ end
 class GearTest < MiniTest::Unit::TestCase
   def test_calculates_gear_inches
     gear =  Gear.new(
-              chainring: 52, 
-              cog:       11, 
+              chainring: 52,
+              cog:       11,
               wheel:     DiameterDouble.new)
-              
-    assert_in_delta(47.27, 
-                    gear.gear_inches, 
+
+    assert_in_delta(47.27,
+                    gear.gear_inches,
                     0.01)
   end
 end
@@ -74,14 +74,14 @@ class WheelTest < MiniTest::Unit::TestCase
   def test_implements_the_diameterizable_interface
     assert_respond_to(@wheel, :width)
   end
-  
+
   def test_calculates_diameter
     # ...
-  end  
+  end
 end
 
 ############## Page 226 ##############
-module DiameterizableInterfaceTest 
+module DiameterizableInterfaceTest
   def test_implements_the_diameterizable_interface
    assert_respond_to(@object, :width)
   end
@@ -90,14 +90,14 @@ end
 ############## Page 226 ##############
 class WheelTest < MiniTest::Unit::TestCase
   include DiameterizableInterfaceTest
-  
+
   def setup
     @wheel = @object = Wheel.new(26, 1.5)
   end
-  
+
   def test_calculates_diameter
     # ...
-  end  
+  end
 end
 
 ############## Page 227 ##############
@@ -108,10 +108,10 @@ class DiameterDouble
 end
 
 # Prove the test double honors the interface this
-#   test expects. 
+#   test expects.
 class DiameterDoubleTest < MiniTest::Unit::TestCase
   include DiameterizableInterfaceTest
-  
+
   def setup
     @object = DiameterDouble.new
   end
@@ -120,12 +120,12 @@ end
 class GearTest < MiniTest::Unit::TestCase
   def test_calculates_gear_inches
     gear =  Gear.new(
-              chainring: 52, 
-              cog:       11, 
+              chainring: 52,
+              cog:       11,
               wheel:     DiameterDouble.new)
-              
+
     assert_in_delta(47.27,
-                    gear.gear_inches,  
+                    gear.gear_inches,
                     0.01)
   end
 end

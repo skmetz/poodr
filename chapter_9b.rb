@@ -11,7 +11,7 @@ class Wheel
     @rim       = rim
     @tire      = tire
   end
-  
+
   def diameter
     rim + (tire * 2)
   end
@@ -32,7 +32,7 @@ class Gear
       #   plays the 'Diameterizable' role.
     ratio * wheel.diameter
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -43,12 +43,12 @@ end
 class GearTest < MiniTest::Unit::TestCase
   def test_calculates_gear_inches
     gear =  Gear.new(
-              chainring: 52, 
-              cog:       11, 
+              chainring: 52,
+              cog:       11,
               wheel:     Wheel.new(26, 1.5))
 
-    assert_in_delta(137.1, 
-                    gear.gear_inches, 
+    assert_in_delta(137.1,
+                    gear.gear_inches,
                     0.01)
   end
 end
@@ -60,7 +60,7 @@ class Wheel
     @rim       = rim
     @tire      = tire
   end
-  
+
   def width   # <---- used to be 'diameter'
     rim + (tire * 2)
   end
@@ -88,7 +88,7 @@ class Gear
   def gear_inches
     ratio * wheel.diameter
   end
-  
+
   def ratio
     chainring / cog.to_f
   end
@@ -108,12 +108,12 @@ end
 class GearTest < MiniTest::Unit::TestCase
   def test_calculates_gear_inches
     gear =  Gear.new(
-              chainring: 52, 
-              cog:       11, 
+              chainring: 52,
+              cog:       11,
               wheel:     DiameterDouble.new)
 
     assert_in_delta(47.27,
-                    gear.gear_inches, 
+                    gear.gear_inches,
                     0.01)
   end
 end
@@ -127,12 +127,12 @@ class WheelTest < MiniTest::Unit::TestCase
   def test_implements_the_diameterizable_interface
     assert_respond_to(@wheel, :diameter)
   end
-  
+
   def test_calculates_diameter
     wheel = Wheel.new(26, 1.5)
 
-    assert_in_delta(29, 
-                    wheel.diameter, 
+    assert_in_delta(29,
+                    wheel.diameter,
                     0.01)
   end
 end
