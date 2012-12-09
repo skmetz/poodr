@@ -482,7 +482,7 @@ road_bike =
     parts: PartsFactory.build(road_config))
 
 road_bike.spares
-# -> [#<OpenStruct PartsFactory::Part name="chain", etc ...
+# -> [#<OpenStruct name="chain", etc ...
 
 mountain_bike = 
   Bicycle.new(
@@ -490,7 +490,7 @@ mountain_bike =
     parts: PartsFactory.build(mountain_config))
 
 mountain_bike.spares
-# -> [#<OpenStruct PartsFactory::Part name="chain", etc ...
+# -> [#<OpenStruct name="chain", etc ...
 #
 ############## Page 182 ##############
 recumbent_config = 
@@ -504,7 +504,7 @@ recumbent_bike =
     parts: PartsFactory.build(recumbent_config))
 
 recumbent_bike.spares
-# -> [#<OpenStruct PartsFactory::Part 
+# -> [#<OpenStruct 
 #       name="chain", 
 #       description="9-speed", 
 #       needs_spare=true>, 
