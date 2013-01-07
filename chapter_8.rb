@@ -508,11 +508,11 @@ recumbent_bike.spares
 #       name="chain",
 #       description="9-speed",
 #       needs_spare=true>,
-#     #<OpenStruct PartsFactory::Part
+#     #<OpenStruct
 #       name="tire_size",
 #       description="28",
 #       needs_spare=true>,
-#     #<OpenStruct PartsFactory::Part
+#     #<OpenStruct
 #       name="flag",
 #       description="tall and orange",
 #       needs_spare=true>]
