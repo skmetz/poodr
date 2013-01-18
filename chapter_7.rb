@@ -21,7 +21,7 @@ class Bicycle
   # Return true if this bicycle is available
   # during this (now Bicycle specific) interval.
   def schedulable?(start_date, end_date)
-    !scheduled?(start_date - lead_days, end_date)
+    !scheduled?(start_date - lead_days, end_date + lead_days)
   end
 
   # Return the schedule's answer
@@ -45,7 +45,7 @@ ending   = Date.parse("2015/09/10")
 b = Bicycle.new
 b.schedulable?(starting, ending)
 # This Bicycle is not scheduled
-#   between 2015-09-03 and 2015-09-10
+#   between 2015-09-03 and 2015-09-11
 #  => true
 
 ############## Page 150 ##############
@@ -57,7 +57,7 @@ module Schedulable
   end
 
   def schedulable?(start_date, end_date)
-    !scheduled?(start_date - lead_days, end_date)
+    !scheduled?(start_date - lead_days, end_date + lead_days)
   end
 
   def scheduled?(start_date, end_date)
@@ -89,7 +89,7 @@ ending   = Date.parse("2015/09/10")
 b = Bicycle.new
 b.schedulable?(starting, ending)
 # This Bicycle is not scheduled
-#    between 2015-09-03 and 2015-09-10
+#    between 2015-09-03 and 2015-09-11
 #  => true
 
 ############## Page 152 ##############
@@ -116,11 +116,11 @@ end
 v = Vehicle.new
 v.schedulable?(starting, ending)
 # This Vehicle is not scheduled
-#   between 2015-09-01 and 2015-09-10
+#   between 2015-09-01 and 2015-09-13
 #  => true
 
 m = Mechanic.new
 m.schedulable?(starting, ending)
 # This Mechanic is not scheduled
-#   between 2012-02-29 and 2015-09-10
+#   between 2015-08-31 and 2015-09-14
 #  => true
