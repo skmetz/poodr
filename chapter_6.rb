@@ -34,7 +34,7 @@ class Bicycle
               :front_shock, :rear_shock
 
   def initialize(args)
-    @type        = args[:style]
+    @style       = args[:style]
     @size        = args[:size]
     @tape_color  = args[:tape_color]
     @front_shock = args[:front_shock]
