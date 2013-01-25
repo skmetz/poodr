@@ -122,5 +122,5 @@ v.schedulable?(starting, ending)
 m = Mechanic.new
 m.schedulable?(starting, ending)
 # This Mechanic is not scheduled
-#   between 2012-02-29 and 2015-09-10
+#   between 2015-08-31 and 2015-09-10
 #  => true
