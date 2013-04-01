@@ -52,7 +52,7 @@ class Trip
   def initialize(args={})
     @bicycles  = args[:bicycles]  ||= []
     @customers = args[:customers] ||= []
-    @vehicls   = args[:vehicle]
+    @vehicles  = args[:vehicle]
   end
 
   def prepare(preparers)
