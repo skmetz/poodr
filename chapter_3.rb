@@ -83,7 +83,7 @@ class Gear
   end
 # ...
 
-############## Page 42 ##############
+############## Page 43 ##############
 class Gear
   attr_reader :chainring, :cog, :rim, :tire
   def initialize(chainring, cog, rim, tire)
