@@ -12,7 +12,7 @@ class Bicycle
   def spares
     { chain:        '10-speed',
       tire_size:    '23',
-      tape_color:   tape_color}
+      tape_color:   tape_color # this will call the getter method}
   end
 
   # Many other methods...
