@@ -45,7 +45,7 @@ class Bicycle
   def spares
     if style == :road
       { chain:        '10-speed',
-        tire_size:    '23',       # milimeters
+        tire_size:    '23',       # millimeters
         tape_color:   tape_color }
     else
       { chain:        '10-speed',
