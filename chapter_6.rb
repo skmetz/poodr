@@ -767,5 +767,5 @@ end
 bent = RecumbentBike.new(flag: 'tall and orange')
 bent.spares
 # -> {:tire_size => "28",
-#     :chain     => "10-speed",
+#     :chain     => "9-speed",
 #     :flag      => "tall and orange"}
