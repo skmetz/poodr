@@ -338,7 +338,7 @@ mountain_bike = MountainBike.new(
                   rear_shock:   'Fox')
 
 mountain_bike.tire_size # => '2.1'
-road_bike.chain         # => "10-speed"
+mountain_bike.chain     # => "10-speed"
 
 ############## Page 127 ##############
 class RecumbentBike < Bicycle
