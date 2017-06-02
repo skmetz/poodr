@@ -3,7 +3,7 @@ MiniTest::Unit.runner = MiniTest::SuiteRunner.new
 MiniTest::Unit.runner.reporters << MiniTest::Reporters::SpecReporter.new
 require 'minitest/autorun'
 
-############## Page ??? ##############
+############## Page 200 ##############
 # The Wheel class expected by the following test
 class Wheel
   attr_reader :rim, :tire
